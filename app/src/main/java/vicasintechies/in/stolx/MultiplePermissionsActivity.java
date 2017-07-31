@@ -166,7 +166,7 @@ public class MultiplePermissionsActivity extends AppCompatActivity {
 
     private void proceedAfterPermission() {
 
-        Toast.makeText(getBaseContext(), "We got All Permissions", Toast.LENGTH_LONG).show();
+       /* Toast.makeText(getBaseContext(), "We got All Permissions", Toast.LENGTH_LONG).show();*/
         Intent intent = new Intent(MultiplePermissionsActivity.this, WelcomeActivity.class);
         startActivity(intent);
 
