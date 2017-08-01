@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,7 +34,9 @@ public class OrderConformationActivity extends AppCompatActivity  {
     private RecyclerView mrecyclerView;
     private DatabaseReference mdatabase,morderbase,mnotification;
     private ProgressDialog prodialog;
+    private  TextView textView;
     String src="abc";
+    String qtyy;
     int total;
     Integer qty;
     String adminuid;
@@ -68,19 +72,21 @@ public class OrderConformationActivity extends AppCompatActivity  {
 
            }
        });
-        TextView textView = (TextView)findViewById(R.id.oplace);
+        textView = (TextView)findViewById(R.id.oplace);
         editText = (EditText)findViewById(R.id.orderqty);
 
 
+        editText.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void afterTextChanged(Editable mEdit)
+            {
+                quu = mEdit.toString();
+                qty = Integer.parseInt(quu);
+                Log.d("quu",quu);
 
-        /*try{
-            qty = Integer.parseInt(ss);
-        }catch (NumberFormatException e){
-            System.out.print(e.getMessage());
-        }*/
-
-        switch (src){
-            case "Mini Drafter":textView.setText("₹200 to ₹220");
+                switch (src){
+                    case "Mini Drafter":textView.setText("₹200 to ₹220");
            /*     if(qty<5){
                     total = 220*qty;
                 }else{
@@ -88,17 +94,30 @@ public class OrderConformationActivity extends AppCompatActivity  {
                 }
 */
 
-                break;
-            case "Scientific Calculator":textView.setText("₹530 to ₹550");
+                        break;
+                    case "Scientific Calculator":textView.setText("₹530 to ₹550");
                /* if(qty<5){
                     total = 550*qty;
                 }else{
                     total= 530*qty;
                 }*/
-                break;
-            case "Drawing Board Pins":textView.setText("₹15"); /*total=qty*15*/;break;
-            case "Drasheet Containers":textView.setText("₹ 100");/*total=total*100*/;break;
-        }
+                        break;
+                    case "Drawing Board Pins":textView.setText("₹15"); /*total=qty*15*/;break;
+                    case "Drasheet Containers":textView.setText("₹ 100");/*total=total*100*/;break;
+                }
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
+        });
+        /*try{
+            qty = Integer.parseInt(ss);
+        }catch (NumberFormatException e){
+            System.out.print(e.getMessage());
+        }*/
+
+
         scrollView = (DiscreteScrollView)findViewById(R.id.picker);
 
         Button btn = (Button)findViewById(R.id.orderconfirm);
@@ -106,7 +125,7 @@ public class OrderConformationActivity extends AppCompatActivity  {
 
             @Override
             public void onClick(View view) {
-                quu = editText.getText().toString();
+
                 new AlertDialog.Builder(OrderConformationActivity.this).setIcon(android.R.drawable.ic_dialog_alert).setTitle("Confirmation")
                         .setMessage("Do you want to place the order of "+quu +" of"+src)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

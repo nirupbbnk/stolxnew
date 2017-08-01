@@ -32,6 +32,10 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="choose_product">Choose Product</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="confirm_the_order">Confirm the Order</string>
     <string-array name="products_array">
 
 
@@ -66,5 +70,18 @@
         <item>IT</item>
         <item>Mech</item>
         <item>TC</item>
+    </string-array>
+
+    <string-array name="qtyarray">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 </resources>

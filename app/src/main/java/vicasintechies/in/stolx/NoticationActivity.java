@@ -12,10 +12,10 @@ public class NoticationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notication);
         Bundle b = getIntent().getExtras();
         String s = b.getString("user");
-        TextView txt = (TextView)findViewById(R.id.textView2);
+       /* TextView txt = (TextView)findViewById(R.id.textView2);
         if(s.equals("default")){
             txt.setText("ass hole no notifiacations");
-        }
+        }*/
 
 
 

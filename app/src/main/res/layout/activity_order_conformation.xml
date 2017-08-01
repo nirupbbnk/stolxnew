@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:layout_marginTop="8dp"
-                        android:text="Choose Product"
+                        android:text="@string/choose_product"
                         android:textColor="@color/name_text_color"
                         android:textSize="25sp" />
                     <Spinner
@@ -141,16 +141,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:layout_marginTop="8dp"
-                        android:text="Quantity"
+                        android:text="@string/quantity"
                         android:textColor="@color/name_text_color"
                         android:textSize="25sp" />
 
 
                     <EditText
                         android:id="@+id/orderqty"
-                        android:inputType="text"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -161,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:layout_marginTop="8dp"
-                        android:text="Price"
+                        android:text="@string/price"
                         android:textColor="@color/name_text_color"
                         android:textSize="25sp" />
 
@@ -189,7 +189,7 @@
                         android:layout_marginBottom="5dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginTop="2dp"
-                        android:text="Confirm the Order" />
+                        android:text="@string/confirm_the_order" />
 
 
 
